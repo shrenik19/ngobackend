@@ -9,6 +9,7 @@ var cors=require('cors');
 var donordetailRouter=require('./donor_routes/donordetail_routes');
 var changepasswordRouter=require('./donor_routes/changepassword_routes');
 var forgetpasswordRouter=require('./donor_routes/forgetpassword_routes');
+var ngodetaildRouter=require('./ngo_ routes/ngodetail_routes');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/donor',donordetailRouter);
 app.use('/changepassword',changepasswordRouter);
 app.use('/forgetpassword',forgetpasswordRouter);
+app.use('/ngo',ngodetaildRouter);
 // app.use('/forgetpassword',forgetpasswordRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
