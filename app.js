@@ -10,7 +10,10 @@ var donordetailRouter=require('./donor_routes/donordetail_routes');
 var changepasswordRouter=require('./donor_routes/changepassword_routes');
 var forgetpasswordRouter=require('./donor_routes/forgetpassword_routes');
 var ngodetaildRouter=require('./ngo_ routes/ngodetail_routes');
-
+var nopRouter=require('./donor_routes/nop_routes');
+var mapRouter=require('./donor_routes/map_routes');
+var ngodetailbynopnameRouter=require('./ngo_ routes/ngodetailbynopname_routes');
+var transactionRouter=require('./donor_routes/transaction_routes')
 var app = express();
 
 // view engine setup
@@ -29,6 +32,10 @@ app.use('/donor',donordetailRouter);
 app.use('/changepassword',changepasswordRouter);
 app.use('/forgetpassword',forgetpasswordRouter);
 app.use('/ngo',ngodetaildRouter);
+app.use('/nop',nopRouter);
+app.use('/map',mapRouter);
+app.use('/ngobynopname',ngodetailbynopnameRouter);
+app.use('/transaction',transactionRouter);
 // app.use('/forgetpassword',forgetpasswordRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

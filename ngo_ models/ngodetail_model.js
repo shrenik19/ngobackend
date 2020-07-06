@@ -9,6 +9,10 @@ var Ngo={
 
         return db.query("Select * from ngo_details_tbl where ngo_email=? ",[email_id],callback)
      },
+     getNgoDetailByNopName:function(nop_name,callback){
+
+      return db.query("Select * from ngo_details_tbl where fk_ngo_nop_name=? ",[nop_name],callback)
+   },
 
 
     
