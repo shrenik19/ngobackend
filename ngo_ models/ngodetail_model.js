@@ -11,7 +11,8 @@ var Ngo={
      },
      getNgoDetailByNopName:function(nop_name,callback){
 
-      return db.query("Select * from ngo_details_tbl where fk_ngo_nop_name=? ",[nop_name],callback)
+      console.log(nop_name);
+      return db.query("SELECT * FROM ngo_details_tbl as a WHERE FIND_IN_SET(?,fk_ngo_nop_name) ",[nop_name],callback)
    },
 
 
