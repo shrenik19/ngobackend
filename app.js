@@ -14,6 +14,11 @@ var nopRouter=require('./donor_routes/nop_routes');
 var mapRouter=require('./donor_routes/map_routes');
 var ngodetailbynopnameRouter=require('./ngo_ routes/ngodetailbynopname_routes');
 var transactionRouter=require('./donor_routes/transaction_routes')
+var transactionbynopnameRouter=require('./ngo_ routes/transaction_routes');
+var transactionbyallnopnameRouter=require('./ngo_ routes/transactionbyallnopname_routes');
+var register1=require('./ngo_ routes/register1_routes');
+var register2=require('./ngo_ routes/register2_routes');
+var register3=require('./ngo_ routes/register3_routes');
 var app = express();
 
 // view engine setup
@@ -36,6 +41,13 @@ app.use('/nop',nopRouter);
 app.use('/map',mapRouter);
 app.use('/ngobynopname',ngodetailbynopnameRouter);
 app.use('/transaction',transactionRouter);
+app.use('/trancationbynop',transactionbynopnameRouter);
+app.use('/trancationtotalbynop',transactionbynopnameRouter);
+app.use('/trancationbyallnop',transactionbyallnopnameRouter);
+app.use('/register1',register1);
+
+app.use('/register2',register2);
+app.use('/register3',register3);
 // app.use('/forgetpassword',forgetpasswordRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
